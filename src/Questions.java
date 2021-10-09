@@ -78,11 +78,11 @@ public class Questions {
         ArrayList<String> answer = new ArrayList<>();
 
         for (int i = 1; i <= n; i++) {
-            if (i % 3 == 0) {
+            if (i / 3 == 1) {
                 answer.add("fizz");
-            } else if (i % 5 == 0) {
+            } else if (i / 5 == 1) {
                 answer.add("buzz");
-            } else if (i % 3 == 0 && i % 5 == 0) {
+            } else if (i / 15 == 1) {
                 answer.add("fizzbuzz");
             } else {
                 answer.add(Integer.toString(i));

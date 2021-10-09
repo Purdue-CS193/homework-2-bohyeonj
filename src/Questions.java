@@ -5,14 +5,14 @@
 *
 * The comments in the methods are for clarification. No tricks or riddles.
 *
-* The overall algorithm should not change. Don't focus on improving the runtime. 
+* The overall algorithm should not change. Don't focus on improving the runtime.
 *
 * Debug in whichever way you feel is best.
 *
 * IT WILL BE AN AUTOMATIC 0, IF YOU MAKE CHANGES TO TESTCASES.JAVA
 *
 * Bonus: Understand these methods! They are helpful in interviews :)
-* 
+*
 */
 
 import java.util.*;
@@ -24,7 +24,7 @@ public class Questions {
         // find the max in the input array
         int max = Integer.MAX_VALUE;
         for (int i = 0; i <= input.length; i++) {
-            if (input[i] > max) {
+            if (input[i] < max) {
                 max = input[i];
             }
         }
@@ -58,10 +58,9 @@ public class Questions {
         // find the average of the input
         int sum = 0;
         for (int i = 1; i < input.length; i++) {
-            sum = input[i] - sum;
+            sum = input[i] + sum;
         }
-        int average = sum / (input.length - 1);
-        return average;
+        return sum / (input.length - 1);
     }
 
     // Task 5
@@ -79,11 +78,11 @@ public class Questions {
         ArrayList<String> answer = new ArrayList<>();
 
         for (int i = 1; i <= n; i++) {
-            if (i % 3 == 1) {
+            if (i % 3 == 0) {
                 answer.add("fizz");
-            } else if (i % 5 == 1) {
+            } else if (i % 5 == 0) {
                 answer.add("buzz");
-            } else if (i % 15 == 1) {
+            } else if (i % 3 == 0 && i % 5 == 0) {
                 answer.add("fizzbuzz");
             } else {
                 answer.add(Integer.toString(i));
